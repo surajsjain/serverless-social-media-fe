@@ -16,7 +16,7 @@ function Home(props) {
             <Button
                 variant={"primary"}
                 style={{"width": "40vw", marginBottom: "1%"}}
-                onClick={() => {}}
+                onClick={() => {document.location.href = "/create";}}
             >
                 Create a post
             </Button>
