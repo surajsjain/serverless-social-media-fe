@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Post from '../components/post';
 
 async function get_all_posts(setPosts)
 {
@@ -22,9 +23,21 @@ const Posts = () => {
     }
 
     return (
-        <div>
+        <div style={
+            {
+                "display": "flex",
+                // "justify-content": "center",
+                "flex-direction": "column",
+                "align-items": "center",
+            }
+        }>
             <h1>Posts</h1>
-            {posts.map((post) => <div>{post['title']}</div>)}
+            <Post
+                title = "Howdy!"
+                username = "missrev"
+                content = "Keep on coding cuz you like it!"
+            />
+            {/*{posts.map((post) => <div>{post['title']}</div>)}*/}
         </div>
     );
 };
