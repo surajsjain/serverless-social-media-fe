@@ -1,5 +1,5 @@
 import React from "react";
-import PrevPosts from "../components/prevPosts";
+import PrevPosts from "../components/containers/prevPosts";
 
 function Home()
 {

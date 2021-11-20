@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Post from './post';
+import Post from '../post';
 
 async function get_all_posts(setPosts)
 {
