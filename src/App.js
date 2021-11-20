@@ -3,9 +3,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-    useRouteMatch,
-    useParams
 } from "react-router-dom";
 import Posts from "./pages/posts";
 
