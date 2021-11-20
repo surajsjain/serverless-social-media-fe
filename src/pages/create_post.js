@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {Button, Form} from "react-bootstrap";
 import { Redirect, useHistory } from 'react-router-dom';
 
-function sendPostToTheServer(history)
+async function sendPostToTheServer(history, base_req_url)
 {
     var username = document.forms["postCreation"]["username"].value;
     var title = document.forms["postCreation"]["title"].value;
@@ -12,10 +12,27 @@ function sendPostToTheServer(history)
     console.log(title);
     console.log(content);
 
+    var req_body = {
+        "title": title,
+        "username": username,
+        "content": content
+    }
+
+    const resp = await fetch(base_req_url + "posts/", {
+        method: "POST",
+        mode: "cors",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(req_body),
+    });
+
+    console.log(resp.status);
+
     history.push("/");
 }
 
-function CreatePost()
+function CreatePost(props)
 {
     const history = useHistory();
 
@@ -39,7 +56,7 @@ function CreatePost()
                 </Form.Group>
 
                 <Button variant="primary" onClick={() => {
-                    sendPostToTheServer(history);
+                    sendPostToTheServer(history, props.base_req_url);
                 }}>
                     Post it!
                 </Button>
