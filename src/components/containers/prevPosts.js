@@ -26,7 +26,7 @@ const PrevPosts = (props) => {
     return (
         <div>
             {
-                posts.reverse().map(
+                posts.slice(0).reverse().map(
                     (post) =>
                     <Post
                         title = {post['title']}
