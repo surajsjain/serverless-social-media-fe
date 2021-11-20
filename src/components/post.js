@@ -6,7 +6,7 @@ function Post(props) {
     // var card_width = props.width * 0.5
 
     return (
-        <Card style={{width: "40vw"}}>
+        <Card style={{width: "40vw", marginBottom: "1em"}}>
             <Card.Header>
                 <Card.Title>{props.title}</Card.Title>
                 <Card.Subtitle>{props.username}</Card.Subtitle>
