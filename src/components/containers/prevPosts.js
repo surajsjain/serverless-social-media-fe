@@ -6,6 +6,7 @@ async function get_all_posts(setPosts, base_req_url)
     try{
         var resp = await fetch(base_req_url + "posts/");
         var all_posts = await resp.json();
+        console.log(all_posts);
 
         setPosts(all_posts);
     }
@@ -24,12 +25,16 @@ const PrevPosts = (props) => {
 
     return (
         <div>
-            <Post
-                title = "Howdy!"
-                username = "missrev"
-                content = "Keep on coding cuz you like it!"
-            />
-            {/*{posts.map((post) => <div>{post['title']}</div>)}*/}
+            {
+                posts.slice(0).reverse().map(
+                    (post) =>
+                    <Post
+                        title = {post['title']}
+                        username = {post['username']}
+                        content = {post['content']}
+                    />
+                )
+            }
         </div>
     );
 };
