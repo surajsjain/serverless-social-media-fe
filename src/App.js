@@ -11,12 +11,14 @@ import Posts from "./pages/posts";
 
 export default function App() {
     return (
-        <Router>
-            <Switch>
-                <Route path="/">
-                    <Posts/>
-                </Route>
-            </Switch>
-        </Router>
+        <div style={{"padding": "2%"}}>
+            <Router>
+                <Switch>
+                    <Route path="/">
+                        <Posts/>
+                    </Route>
+                </Switch>
+            </Router>
+        </div>
     );
 }
