@@ -8,12 +8,14 @@ import {
 import Home from "./pages/home";
 
 export default function App() {
+    var base_req_url = "https://servelesssocialmedia.surajsjn.workers.dev/";
+
     return (
         <div style={{"padding": "2%", "font-family": "sans-serif"}}>
             <Router>
                 <Switch>
                     <Route path="/">
-                        <Home/>
+                        <Home base_req_url = {base_req_url}/>
                     </Route>
                 </Switch>
             </Router>
