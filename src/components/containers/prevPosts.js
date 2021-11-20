@@ -23,15 +23,7 @@ const PrevPosts = (props) => {
     }
 
     return (
-        <div style={
-            {
-                "display": "flex",
-                // "justify-content": "center",
-                "flex-direction": "column",
-                "align-items": "center",
-            }
-        }>
-            <h1>Posts</h1>
+        <div>
             <Post
                 title = "Howdy!"
                 username = "missrev"
