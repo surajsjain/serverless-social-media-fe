@@ -3,19 +3,23 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-    useRouteMatch,
-    useParams
 } from "react-router-dom";
-import Posts from "./pages/posts";
+
+import Home from "./pages/home";
+import CreatePost from "./pages/create_post";
 
 export default function App() {
+    var base_req_url = "https://servelesssocialmedia.surajsjn.workers.dev/";
+
     return (
-        <div style={{"padding": "2%"}}>
+        <div style={{"padding": "2%", fontFamily: "sans-serif"}}>
             <Router>
                 <Switch>
-                    <Route path="/">
-                        <Posts/>
+                    <Route exact path="/">
+                        <Home base_req_url = {base_req_url}/>
+                    </Route>
+                    <Route exact path="/create">
+                        <CreatePost></CreatePost>
                     </Route>
                 </Switch>
             </Router>

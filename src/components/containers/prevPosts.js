@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Post from '../components/post';
+import Post from '../post';
 
-async function get_all_posts(setPosts)
+async function get_all_posts(setPosts, base_req_url)
 {
     try{
-        var resp = await fetch("https://servelesssocialmedia.surajsjn.workers.dev/posts/");
+        var resp = await fetch(base_req_url + "posts/");
         var all_posts = await resp.json();
 
         setPosts(all_posts);
@@ -15,23 +15,15 @@ async function get_all_posts(setPosts)
     }
 }
 
-const Posts = () => {
+const PrevPosts = (props) => {
     const [posts, setPosts] = useState([]);
     if(posts.length == 0)
     {
-        get_all_posts(setPosts);
+        get_all_posts(setPosts, props.base_req_url);
     }
 
     return (
-        <div style={
-            {
-                "display": "flex",
-                // "justify-content": "center",
-                "flex-direction": "column",
-                "align-items": "center",
-            }
-        }>
-            <h1>Posts</h1>
+        <div>
             <Post
                 title = "Howdy!"
                 username = "missrev"
@@ -42,4 +34,4 @@ const Posts = () => {
     );
 };
 
-export default Posts;
+export default PrevPosts;
