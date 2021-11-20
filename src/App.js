@@ -19,7 +19,7 @@ export default function App() {
                         <Home base_req_url = {base_req_url}/>
                     </Route>
                     <Route exact path="/create">
-                        <CreatePost></CreatePost>
+                        <CreatePost base_req_url = {base_req_url} />
                     </Route>
                 </Switch>
             </Router>
