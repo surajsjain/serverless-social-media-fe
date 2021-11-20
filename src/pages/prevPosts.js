@@ -15,7 +15,7 @@ async function get_all_posts(setPosts)
     }
 }
 
-const Posts = () => {
+const PrevPosts = () => {
     const [posts, setPosts] = useState([]);
     if(posts.length == 0)
     {
@@ -42,4 +42,4 @@ const Posts = () => {
     );
 };
 
-export default Posts;
+export default PrevPosts;

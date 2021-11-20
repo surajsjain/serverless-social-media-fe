@@ -4,7 +4,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import Posts from "./pages/posts";
+import PrevPosts from "./pages/prevPosts";
 
 export default function App() {
     return (
@@ -12,7 +12,7 @@ export default function App() {
             <Router>
                 <Switch>
                     <Route path="/">
-                        <Posts/>
+                        <PrevPosts/>
                     </Route>
                 </Switch>
             </Router>
