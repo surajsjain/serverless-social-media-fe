@@ -8,7 +8,7 @@ import Posts from "./pages/posts";
 
 export default function App() {
     return (
-        <div style={{"padding": "2%"}}>
+        <div style={{"padding": "2%", "font-family": "sans-serif"}}>
             <Router>
                 <Switch>
                     <Route path="/">
